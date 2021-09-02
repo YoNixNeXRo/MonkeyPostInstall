@@ -22,7 +22,7 @@ Post install script for vm (mostly)
 - setup grub password
 - change video resolution
 - change grub timeout
-- install cheat tool, github:https://github.com/cheat/cheat
+- install cheat tool, github : https://github.com/cheat/cheat
 - creat chroot for user
 - install and setup dropbear to ssh at bootloading
 - install and setup nginx
