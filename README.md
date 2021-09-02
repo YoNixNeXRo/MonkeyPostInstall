@@ -1,5 +1,5 @@
 # MonkeyPostInstall
-Post install script for vm (mostly)
+Post install shell script for vm (mostly), works better with debian
 
 
 **What does it do ?**
