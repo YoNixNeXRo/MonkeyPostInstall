@@ -10,7 +10,7 @@ Post install script for vm (mostly)
 - install usefull packages
 - creat ssh key for root
 - creat ssh key for user
-- add a user toto with password P@ssword
+- add a sudo user ape with password P@ssword
 - setup vim
 - setup network (need to uncomment lines in code)
 - setup issue.net
