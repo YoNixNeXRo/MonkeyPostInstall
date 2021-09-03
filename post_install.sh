@@ -308,7 +308,7 @@ update-grub
 	old_hostname=`hostname`
 	hostnamectl set-hostname banana.ape.local
 	sed -i "s/$old_hostname/banana.ape.local		wiki/g" /etc/hosts
-	sed -i "s/127.0.1.1/192.168.1.190/" /etc/hosts
+	#sed -i "s/127.0.1.1/192.168.1.190/" /etc/hosts
 
 
 cat "9.9.9.9" >> /etc/resolv.conf
