@@ -163,17 +163,6 @@ systemctl restart systemd-timesyncd
 
 #############################
 #                           #
-#      change hostname      #
-#                           #
-#############################
-
-sed -i 's/debian/wiki/g' /etc/hostname
-sed -i 's/debian/wiki banana.ape.local/g' /etc/hosts
-
-
-
-#############################
-#                           #
 #           .bashrc         #
 #                           #
 #############################
@@ -302,12 +291,12 @@ update-grub
 ##################################################
 #                                                #
 #                setup du hostname               #
-#                                                #
+#                 if needed                      #
 ##################################################
 
-	old_hostname=`hostname`
-	hostnamectl set-hostname banana.ape.local
-	sed -i "s/$old_hostname/banana.ape.local		wiki/g" /etc/hosts
+	#old_hostname=`hostname`
+	#hostnamectl set-hostname banana.ape.local
+	#sed -i "s/$old_hostname/banana.ape.local		wiki/g" /etc/hosts
 	#sed -i "s/127.0.1.1/192.168.1.190/" /etc/hosts
 
 
@@ -391,13 +380,13 @@ EOF
 	/usr/lib/dropbear/dropbearconvert dropbear openssh dropbear_rsa_host_key id_rsa
 	dropbearkey -y -f dropbear_rsa_host_key | grep "^ssh-rsa " > id_rsa.pub
 
-	
-	echo "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC6VwQImas30Q8j7MwqmUZudgITgjRq4Rvt0xNmGjgBFepGDLcaVFyRO3/SwA5prDR+zfyGNZCQuPeWAwj2PAk+URGc+ZEEm3km+VdXIL9UWwIcYqze/11iOjCfsUoUhROJ1zthHMZfmHcg+gKFeJvm4+wi3HbqxiHZbMyoOpsEj45PUuDmYZ3WFV8stVwfeUg2W26ZuT/2aRnydLgxvhsOw7dZIZOAnpIaQ/zUsVQA/yHaDO9flO1D5q3W8/e6eXH/PLxqHgEs/kGTlIAgUeD3nQ+zfUzHbz30r5IstfMFBgTp8Mw15+Jbz6eM3S0nTCt1N31+uaACel1Q/JfwVoGRC9W6kilpeKVlpxLgCqpw/wMt3gmuxCjvDvHiTlR9Ks5+4ASUQKgZo3prUDhxLaoHzBT8vA1oK8SHkHXKWa6Mwp/SOpLuVTN3V28sXWr4R8SODMPs+t+IadIyjfO+rtimLy1ysMJtxweFgfl02TdscL6FvzbvoLxbJW7B3urQa5E= yonix_nexro@pavillon">> /etc/dropbear-initramfs/authorized_keys	
-	
-	echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO8m/yZjlAlu7A7RrEhU5RWBqIt75mr2xecq3564/gzy davy@XEON" >> /etc/dropbear-initramfs/authorized_keys
+	#replace with your rsa key
+	echo "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIO8m/yZjlAlu7A7RrEhU5RWBqIt75mr2xecq3564/gzy APE@XEON" >> /etc/dropbear-initramfs/authorized_keys
 
 	cd 
 	sed -i "s/NO_START=1/NO_START=0/g" /etc/default/dropbear
+	
+	#change dropbear to port 21
 	echo "DROPBEAR_OPTIONS=\"-p 21\"" >> /etc/dropbear-initramfs/config
        	update-initramfs -u 
 	systemctl disable dropbear
