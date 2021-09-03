@@ -16,7 +16,6 @@ Post install shell script for vm (mostly), works better with debian
 - setup issue.net
 - setup figlet
 - setup time zone to Europe/Paris
-- change hostname
 - setup usefull .bashrc
 - disable recovery mod on grub
 - setup grub password
@@ -24,7 +23,7 @@ Post install shell script for vm (mostly), works better with debian
 - change grub timeout
 - install cheat tool, github : https://github.com/cheat/cheat
 - creat chroot for user
-- install and setup dropbear to ssh at bootloading
+- install and setup dropbear to ssh at bootloading (need to put your dropbear key)
 - install and setup nginx
 - install and setup mariadb
 - install php
